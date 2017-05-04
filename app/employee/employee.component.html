@@ -1,0 +1,31 @@
+<div class='panel panel-primary'>
+    <div class='panel-heading'>
+        {{pageTitle}}
+    </div>
+    <div class='panel-body'>
+{{employees}}
+        <div class='table-responsive'>
+            <table class='table'
+                   ngIf='employees && employees.length'>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Location</th>
+                        <th>Salary</th>
+                        <th>Designation</th>
+                        <th>Phone</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let employee of employees'>
+                        <td>{{employee.EmpName}}</td>
+                        <td>{{employee.EmpLocation}}</td>
+                        <td>{{employee.EmpSalary}}</td>
+                        <td>{{employee.EmpDesignation}}</td>
+                        <td>{{employee.EmpPhone}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
