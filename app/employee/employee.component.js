@@ -13,8 +13,6 @@ const core_1 = require("@angular/core");
 let EmployeeComponent = class EmployeeComponent {
     constructor() {
         this.pageTitle = "Employee List";
-    }
-    ngOnInit() {
         this.employees = [
             {
                 EmpId: 1001,
@@ -42,6 +40,9 @@ let EmployeeComponent = class EmployeeComponent {
                 EmpPhone: 9916550003
             }
         ];
+    }
+    ngOnInit() {
+        // this.employees 
     }
 };
 EmployeeComponent = __decorate([

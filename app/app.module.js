@@ -7,6 +7,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
+const forms_1 = require("@angular/forms");
+const common_1 = require("@angular/common");
 const platform_browser_1 = require("@angular/platform-browser");
 const http_1 = require("@angular/http");
 const router_1 = require("@angular/router");
@@ -22,6 +24,8 @@ AppModule = __decorate([
         imports: [
             platform_browser_1.BrowserModule,
             http_1.HttpModule,
+            common_1.CommonModule,
+            forms_1.FormsModule,
             router_1.RouterModule.forRoot([
                 { path: 'welcome', component: welcome_component_1.WelcomeComponent },
                 { path: '', redirectTo: 'welcome', pathMatch: 'full' },

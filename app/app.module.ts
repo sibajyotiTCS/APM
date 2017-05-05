@@ -1,4 +1,9 @@
 import { NgModule } from '@angular/core';
+
+import {  FormsModule } from '@angular/forms';
+
+import { CommonModule  } from '@angular/common';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
@@ -15,6 +20,8 @@ import { EmployeeModule } from './employee/employee.module';
   imports: [
     BrowserModule,
     HttpModule,
+    CommonModule,
+    FormsModule,
     RouterModule.forRoot([
       { path: 'welcome', component: WelcomeComponent },
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },

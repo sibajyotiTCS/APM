@@ -3,10 +3,9 @@
         {{pageTitle}}
     </div>
     <div class='panel-body'>
-{{employees}}
         <div class='table-responsive'>
             <table class='table'
-                   ngIf='employees && employees.length'>
+                   *ngIf='employees && employees.length'>
                 <thead>
                     <tr>
                         <th>Name</th>

@@ -8,6 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
 const router_1 = require("@angular/router");
+const common_1 = require("@angular/common");
+const forms_1 = require("@angular/forms");
 const employee_component_1 = require("./employee.component");
 let EmployeeModule = class EmployeeModule {
 };
@@ -16,7 +18,9 @@ EmployeeModule = __decorate([
         imports: [
             router_1.RouterModule.forChild([
                 { path: 'employee', component: employee_component_1.EmployeeComponent },
-            ])
+            ]),
+            common_1.CommonModule,
+            forms_1.FormsModule
         ],
         declarations: [employee_component_1.EmployeeComponent]
     })
