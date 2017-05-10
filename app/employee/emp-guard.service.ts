@@ -8,7 +8,9 @@ export class EmployeeGuardService implements CanActivate{
 
    }
     canActivate(_route:ActivatedRouteSnapshot){
-        
+        let id:string = _route.url[1].toString();
+        if( (+id % 2) ==0)
+            return true;
         return false;
     }
 }
