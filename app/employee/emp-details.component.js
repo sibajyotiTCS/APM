@@ -11,24 +11,34 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
 const employee_service_1 = require("./employee.service");
-let EmployeeComponent = class EmployeeComponent {
-    constructor(_employeeService) {
+const router_1 = require("@angular/router");
+let EmployeeDetailsComponent = class EmployeeDetailsComponent {
+    constructor(_route, _router, _employeeService) {
+        this._route = _route;
+        this._router = _router;
         this._employeeService = _employeeService;
-        this.pageTitle = "Employee List";
+        this.pageTitle = "Employee Details";
     }
     ngOnInit() {
-        this._employeeService.getEmployees()
-            .subscribe(employees => this.employees = employees, error => this.errorMessage = error);
+        this._route.params.subscribe(param => {
+            let id = param['id'];
+            this.getEmpByID(id);
+        });
     }
-    onRatingClicked($event) {
-        this.pageTitle = $event;
+    getEmpByID(id) {
+        this._employeeService.getEmployee(id).subscribe(emp => this.employee = emp, error => this.error = error);
+    }
+    onBack() {
+        this._router.navigate(["employee"]);
     }
 };
-EmployeeComponent = __decorate([
+EmployeeDetailsComponent = __decorate([
     core_1.Component({
-        templateUrl: 'app/employee/employee.component.html'
+        templateUrl: "app/employee/emp-details.component.html"
     }),
-    __metadata("design:paramtypes", [employee_service_1.EmployeeService])
-], EmployeeComponent);
-exports.EmployeeComponent = EmployeeComponent;
-//# sourceMappingURL=employee.component.js.map
+    __metadata("design:paramtypes", [router_1.ActivatedRoute,
+        router_1.Router,
+        employee_service_1.EmployeeService])
+], EmployeeDetailsComponent);
+exports.EmployeeDetailsComponent = EmployeeDetailsComponent;
+//# sourceMappingURL=emp-details.component.js.map

@@ -36,7 +36,7 @@ AppModule = __decorate([
         ],
         declarations: [
             app_component_1.AppComponent,
-            welcome_component_1.WelcomeComponent
+            welcome_component_1.WelcomeComponent,
         ],
         bootstrap: [app_component_1.AppComponent]
     })

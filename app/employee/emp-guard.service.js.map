@@ -1,0 +1,1 @@
+{"version":3,"file":"emp-guard.service.js","sourceRoot":"","sources":["emp-guard.service.ts"],"names":[],"mappings":";;;;;;;;;;;AAAA,4CAA8E;AAC9E,wCAA2C;AAG3C,IAAa,oBAAoB,GAAjC;IAEG,YAAoB,OAAc;QAAd,YAAO,GAAP,OAAO,CAAO;IAElC,CAAC;IACA,WAAW,CAAC,MAA6B;QAErC,MAAM,CAAC,KAAK,CAAC;IACjB,CAAC;CACJ,CAAA;AATY,oBAAoB;IADhC,iBAAU,EAAE;qCAGkB,eAAM;GAFxB,oBAAoB,CAShC;AATY,oDAAoB"}

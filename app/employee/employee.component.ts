@@ -16,8 +16,12 @@ export class EmployeeComponent implements OnInit{
     constructor(private _employeeService:EmployeeService){ }    
 
     ngOnInit():void{
-      this._employeeService.getEmployee()
+      this._employeeService.getEmployees()
       .subscribe(employees => this.employees = employees,
       error=> this.errorMessage = <string>error);
+    }
+
+    onRatingClicked($event:any){
+        this.pageTitle = $event;
     }
 }

@@ -32,7 +32,8 @@ import { EmployeeModule } from './employee/employee.module';
   ],
   declarations: [
     AppComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    
   ],
   bootstrap: [ AppComponent ]
 })

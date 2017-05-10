@@ -1,0 +1,41 @@
+
+<div class='panel panel-primary' *ngIf='employee'>
+    <div class='panel-heading'>
+        {{pageTitle +':'+ employee.EmpName}}
+    </div>
+    <div class='panel-body'>
+        <div class="row">
+            <div class='col-md-6'>
+                <div class="row">
+                    <div class='col-md-3'>Name:</div>
+                    <div class='col-md-6'>{{employee.EmpName}}</div>
+                </div>
+                <div class="row">
+                    <div class='col-md-3'>Location:</div>
+                    <div class='col-md-6'>{{employee.EmpLocation}}</div>
+                </div>
+                <div class="row">
+                    <div class='col-md-3'>Salary:</div>
+                    <div class='col-md-6'>{{employee.EmpSalary}}</div>
+                </div>
+                <div class="row">
+                    <div class='col-md-3'>Designation:</div>
+                    <div class='col-md-6'>{{employee.EmpDesignation}}</div>
+                </div>
+                <div class="row">
+                    <div class='col-md-3'>Phone:</div>
+                    <div class='col-md-6'>{{employee.EmpPhone}}</div>
+                </div>
+                 <div class="row">
+                    <div class='col-md-3'>Rating:</div>
+                    <div class='col-md-6'><ai-star [rating]="employee.EmpRating"></ai-star></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='panel-footer'>
+        <a class='btn btn-default' (click)='onBack()' style='width:80px'>
+            <i class='glyphicon glyphicon-chevron-left'></i> Back
+        </a>
+    </div>
+</div>

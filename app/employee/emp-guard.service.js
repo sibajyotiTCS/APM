@@ -9,26 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+const router_1 = require("@angular/router");
 const core_1 = require("@angular/core");
-const employee_service_1 = require("./employee.service");
-let EmployeeComponent = class EmployeeComponent {
-    constructor(_employeeService) {
-        this._employeeService = _employeeService;
-        this.pageTitle = "Employee List";
+let EmployeeGuardService = class EmployeeGuardService {
+    constructor(_router) {
+        this._router = _router;
     }
-    ngOnInit() {
-        this._employeeService.getEmployees()
-            .subscribe(employees => this.employees = employees, error => this.errorMessage = error);
-    }
-    onRatingClicked($event) {
-        this.pageTitle = $event;
+    canActivate(_route) {
+        return false;
     }
 };
-EmployeeComponent = __decorate([
-    core_1.Component({
-        templateUrl: 'app/employee/employee.component.html'
-    }),
-    __metadata("design:paramtypes", [employee_service_1.EmployeeService])
-], EmployeeComponent);
-exports.EmployeeComponent = EmployeeComponent;
-//# sourceMappingURL=employee.component.js.map
+EmployeeGuardService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [router_1.Router])
+], EmployeeGuardService);
+exports.EmployeeGuardService = EmployeeGuardService;
+//# sourceMappingURL=emp-guard.service.js.map

@@ -8,9 +8,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
 const router_1 = require("@angular/router");
-const common_1 = require("@angular/common");
-const forms_1 = require("@angular/forms");
+const shared_module_1 = require("../shared/shared.module");
 const employee_component_1 = require("./employee.component");
+const emp_details_component_1 = require("./emp-details.component");
+const employee_service_1 = require("./employee.service");
+const emp_filter_pipe_1 = require("./emp-filter.pipe");
+const emp_guard_service_1 = require("./emp-guard.service");
 let EmployeeModule = class EmployeeModule {
 };
 EmployeeModule = __decorate([
@@ -18,11 +21,14 @@ EmployeeModule = __decorate([
         imports: [
             router_1.RouterModule.forChild([
                 { path: 'employee', component: employee_component_1.EmployeeComponent },
+                { path: 'employee/:id',
+                    canActivate: [emp_guard_service_1.EmployeeGuardService],
+                    component: emp_details_component_1.EmployeeDetailsComponent },
             ]),
-            common_1.CommonModule,
-            forms_1.FormsModule
+            shared_module_1.SharedModule
         ],
-        declarations: [employee_component_1.EmployeeComponent]
+        providers: [employee_service_1.EmployeeService, emp_guard_service_1.EmployeeGuardService],
+        declarations: [employee_component_1.EmployeeComponent, emp_details_component_1.EmployeeDetailsComponent, emp_filter_pipe_1.EmployeeFilterPipe]
     })
 ], EmployeeModule);
 exports.EmployeeModule = EmployeeModule;

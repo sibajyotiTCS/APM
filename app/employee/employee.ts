@@ -6,4 +6,6 @@ export interface IEmployee {
     EmpSalary?: number;
     EmpDesignation: string;
     EmpPhone: number;
+    
+    EmpRating:number;
 }
